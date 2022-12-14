@@ -11,7 +11,7 @@ VERSE
   private
 
   def pluralize(bottles)
-    if bottles > 2
+    if bottles >= 2
       return "#{bottles} bottles"
     elsif bottles == 1
       return "#{bottles} bottle"
