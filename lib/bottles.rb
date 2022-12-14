@@ -21,6 +21,6 @@ VERSE
   end
 
   def pluralize_last(bottles)
-    "#{bottles < 1 ? 'it' : 'one'} down"
+    "#{bottles <= 1 ? 'it' : 'one'} down"
   end
 end
