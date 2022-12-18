@@ -1,24 +1,15 @@
 class Bottles
-  def verse(bottles)
+  def verse(bottles, flag = true)
     last_bottles = bottles - 1
 
     <<-VERSE
-#{pluralize bottles, true} of beer on the wall, #{pluralize bottles} of beer.
+#{pluralize bottles, flag} of beer on the wall, #{pluralize bottles} of beer.
 #{pluralize_last bottles}, #{pluralize last_bottles} of beer on the wall.
 VERSE
   end
 
   def verses(first_verse_bottles, second_verse_bottles)
-    first_last_bottles = first_verse_bottles - 1
-    second_last_bottles = second_verse_bottles - 1
-
-    <<-VERSES
-#{pluralize first_verse_bottles, true} of beer on the wall, #{pluralize first_verse_bottles} of beer.
-#{pluralize_last first_verse_bottles}, #{pluralize first_last_bottles} of beer on the wall.
-
-#{pluralize second_verse_bottles, true} of beer on the wall, #{pluralize second_verse_bottles} of beer.
-#{pluralize_last second_verse_bottles}, #{pluralize second_last_bottles} of beer on the wall.
-VERSES
+    "#{verse(first_verse_bottles)}\n#{verse(second_verse_bottles)}"
   end
 
   private
