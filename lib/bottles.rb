@@ -9,7 +9,13 @@ VERSE
   end
 
   def verses(first_verse_bottles, second_verse_bottles)
-    "#{verse(first_verse_bottles)}\n#{verse(second_verse_bottles)}"
+    chorus = ""
+    (second_verse_bottles..first_verse_bottles).to_a.reverse.each do |bottles|
+      line_break = bottles.equal?(second_verse_bottles) ? '' : "\n"
+      chorus = chorus + "#{verse(bottles)}#{line_break}"
+    end
+
+    chorus
   end
 
   private
