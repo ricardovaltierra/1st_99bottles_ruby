@@ -18,6 +18,10 @@ VERSE
     chorus
   end
 
+  def song
+    verses(99,0)
+  end
+
   private
 
   def pluralize(bottles, first_time = false)
