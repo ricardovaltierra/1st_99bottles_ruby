@@ -8,6 +8,19 @@ class Bottles
 VERSE
   end
 
+  def verses(first_verse_bottles, second_verse_bottles)
+    first_last_bottles = first_verse_bottles - 1
+    second_last_bottles = second_verse_bottles - 1
+
+    <<-VERSES
+#{pluralize first_verse_bottles, true} of beer on the wall, #{pluralize first_verse_bottles} of beer.
+#{pluralize_last first_verse_bottles}, #{pluralize first_last_bottles} of beer on the wall.
+
+#{pluralize second_verse_bottles, true} of beer on the wall, #{pluralize second_verse_bottles} of beer.
+#{pluralize_last second_verse_bottles}, #{pluralize second_last_bottles} of beer on the wall.
+VERSES
+  end
+
   private
 
   def pluralize(bottles, first_time = false)
